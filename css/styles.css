@@ -308,8 +308,8 @@ Sidebar
 .social-icons {
   display: grid;
   margin-top: 3rem;
-  width: 20rem;
-  grid-template-columns: repeat(5, 1fr);
+  width: 12rem;
+  grid-template-columns: repeat(3, 1fr);
   justify-items: center;
 }
 .social-icon {
@@ -597,9 +597,9 @@ Connect
 */
 
 .connect {
-  min-height: 40vh;
+  min-height: 35vh;
   position: relative;
-  padding: 10rem 0 5rem 0;
+  padding: 8rem 0 4rem 0;
   margin: 5rem 0;
 }
 .video-container {
@@ -737,17 +737,130 @@ Timeline
 Blog
 ===============
 */
-
+.blog {
+  background: var(--clr-grey-10);
+}
+.card {
+  height: 27rem;
+  position: relative;
+  /* talk later */
+  -webkit-perspective: 1500px;
+  perspective: 1500px;
+}
+.card-side {
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius);
+  -webkit-transform: translate3d(0, 0, 0);
+  visibility: visible;
+}
+.card-front {
+  background: var(--clr-white);
+}
+.card-back {
+  background: var(--clr-primary-10);
+  -webkit-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+  display: grid;
+  place-items: center;
+}
+.card:hover .card-front {
+  -webkit-transform: rotateY(-180deg);
+  transform: rotateY(-180deg);
+}
+.card:hover .card-back {
+  -webkit-transform: rotateY(0);
+  transform: rotateY(0);
+}
+/* rest of the styles */
+.card-info {
+  padding: 1rem 1.5rem;
+}
+.card-front img {
+  height: 13rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+}
+.card-footer {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.card-footer img {
+  width: 2rem;
+  height: 2rem;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.card-footer p {
+  margin-bottom: 0;
+  text-transform: uppercase;
+  justify-self: end;
+  color: var(--clr-primary-5);
+  font-size: 0.85rem;
+}
+.blog-center {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 3rem 1rem;
+}
 /*
 =============== 
 Footer
 ===============
 */
+.footer {
+  padding-bottom: 2rem;
+  background: #222;
+  display: grid;
+  place-items: center;
+}
+.footer .social-icons {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.footer .social-icon {
+  color: var(--clr-primary-5);
+}
+.footer .social-icon:hover {
+  color: var(--clr-primary-10);
+}
+.footer p {
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
 /*
 =============== 
 Single Page
 ===============
 */
+.single-page {
+  background: var(--clr-primary-10);
+  min-height: calc(100vh - 5rem - 198px);
+}
+.page-info {
+  max-width: 700px;
+}
+.page-info a {
+  text-transform: uppercase;
+  color: var(--clr-primary-5);
+  -webkit-transition: var(--transition);
+  transition: var(--transition);
+}
+.page-info a:hover {
+  color: var(--clr-primary-1);
+}
 
 /*
 =============== 
@@ -766,10 +879,8 @@ Products Page
 .single-project {
   background: var(--clr-grey-10);
   border-radius: var(--radius);
-}
-.project-container img {
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
+  display: flex;
+  align-items: center;
 }
 .project-container {
   position: relative;
@@ -793,9 +904,8 @@ Products Page
 .project-details {
   padding: 2rem 1.5rem;
 }
-.project-footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.project-footer span {
+  margin-right: 2rem;
   color: var(--clr-primary-5);
 }
 .project-footer a {
@@ -808,8 +918,25 @@ Products Page
 .project-footer a:hover {
   color: var(--clr-primary-1);
 }
-.projects-page-center {
+/* .projects-page-center {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
   gap: 3rem 1rem;
+} */
+
+.project-image{
+  margin-left: 4rem;
+}
+.project-image img{
+  border-radius: var(--radius);
+  transform: scale(0.9);
+  object-fit: cover;
+}
+
+.project-section{
+  padding-top: 5rem;
+}
+
+.section-last{
+  padding-bottom: 5rem;
 }
