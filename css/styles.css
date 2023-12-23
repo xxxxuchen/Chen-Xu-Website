@@ -783,6 +783,9 @@ Blog
 .card-info {
   padding: 1rem 1.5rem;
 }
+.card-info h4 {
+  line-height: 1.5;
+}
 .card-front img {
   height: 13rem;
   -o-object-fit: cover;
@@ -881,6 +884,7 @@ Products Page
   border-radius: var(--radius);
   display: flex;
   align-items: center;
+
 }
 .project-container {
   position: relative;
@@ -903,6 +907,7 @@ Products Page
 }
 .project-details {
   padding: 2rem 1.5rem;
+  width: 75%;
 }
 .project-footer span {
   margin-right: 2rem;
@@ -926,11 +931,15 @@ Products Page
 
 .project-image{
   margin-left: 4rem;
+  width: 50%;
+  padding: 1rem;
 }
-.project-image img{
+.project-image img { 
   border-radius: var(--radius);
-  transform: scale(0.9);
-  object-fit: cover;
+
+  height: 18rem;
+  object-fit: contain;
+
 }
 
 .project-section{
